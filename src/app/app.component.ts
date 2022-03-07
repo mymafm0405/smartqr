@@ -1,4 +1,3 @@
-import { User } from './shared/user.model';
 import { UsersService } from './shared/users.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'smart-qr';
-  users: User[] = [];
+  scanUser!: string;
 
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
-    this.users = this.usersService.getUsers();
+    this.usersService.scanUserChanged.subscribe((data: string) => {
+      this.scanUser = data;
+      console.log(this.scanUser);
+    });
   }
 }

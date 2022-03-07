@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { scan, Subject } from 'rxjs';
 import { User } from './user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
+  scanUserChanged = new Subject<string>();
+
   users: User[] = [
     new User(
       '1',
@@ -16,7 +19,7 @@ export class UsersService {
       '../../assets/images/user.jpg',
       '+97466548110',
       'Muizer area',
-      'unvaccinated',
+      'vaccinated',
       ['1', '2'],
       ['1', '2']
     ),
@@ -25,5 +28,9 @@ export class UsersService {
 
   getUsers() {
     return this.users;
+  }
+
+  changeScan(scanUser: string) {
+    this.scanUserChanged.next(scanUser);
   }
 }

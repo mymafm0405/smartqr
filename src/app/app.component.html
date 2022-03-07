@@ -1,9 +1,12 @@
 <div class="container">
   <div class="row text-center">
-    <div class="main col-md-6 col-md-push-3 col-xs-6 col-xs-push-3">
+    <div class="home col-md-6 col-md-push-3 col-xs-6 col-xs-push-3">
       <h1 class="title">SmartQR</h1>
-      <app-user [user]="users[0]"></app-user>
-      <app-data></app-data>
+      <div *ngIf="scanUser">
+        <app-result></app-result>
+        <app-data [scanBy]="scanUser"></app-data>
+      </div>
+      <app-scan-user-form></app-scan-user-form>
     </div>
   </div>
 </div>
