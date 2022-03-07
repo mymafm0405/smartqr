@@ -1,0 +1,8 @@
+.title {
+  font-size: 80px;
+}
+.main {
+  margin-top: 30px;
+  border: 1px dashed red;
+  box-shadow: 5px 10px 10px #888888;
+}
