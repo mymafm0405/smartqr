@@ -16,7 +16,7 @@ export class UsersService {
       '../../assets/images/user.jpg',
       '+97466548110',
       'Muizer area',
-      'vaccinated',
+      'unvaccinated',
       ['1', '2'],
       ['1', '2']
     ),

@@ -1,8 +1,41 @@
 <div class="row">
-  <div class="col-md-4 col-xs-4">
-    <img [src]="user.imageUrl" alt="User Photo" />
+  <div class="col-md-7 col-xs-7">
+    <img [src]="user.imageUrl" class="img-thumbnail" alt="User Photo" />
   </div>
-  <div class="col-md-8 col-xs-8">
-    <h2>{{ covidStatus }}</h2>
+  <div class="col-md-4 col-xs-4">
+    <h2
+      [ngClass]="
+        user.covidStatus === 'vaccinated' ? 'covid green' : 'covid red'
+      "
+    >
+      {{ covidStatus }}
+    </h2>
+    <h2 [ngClass]="user.covidStatus === 'vaccinated' ? 'green' : 'red'">
+      <span
+        [ngClass]="
+          user.covidStatus === 'vaccinated'
+            ? 'glyphicon glyphicon-ok'
+            : 'glyphicon glyphicon-remove'
+        "
+      ></span>
+    </h2>
+    <img
+      class="img-responsive"
+      *ngIf="user.covidStatus === 'vaccinated'"
+      src="../../assets/images/green.png"
+      alt="vaccinated"
+    />
+    <img
+      class="img-responsive"
+      *ngIf="user.covidStatus === 'unvaccinated'"
+      src="../../assets/images/red.png"
+      alt="vaccinated"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+    <h3>{{ user.idNumber }}</h3>
   </div>
 </div>

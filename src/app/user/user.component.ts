@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
     if (this.user.covidStatus === 'vaccinated') {
       this.covidStatus = 'Vaccinated';
     } else if (this.user.covidStatus === 'unvaccinated') {
-      this.covidStatus = 'Vaccinated';
+      this.covidStatus = 'Unvaccinated';
     } else {
       this.covidStatus = 'Unknown';
     }
