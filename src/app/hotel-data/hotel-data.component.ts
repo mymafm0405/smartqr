@@ -1,4 +1,5 @@
-import { UsersService } from './../shared/users.service';
+import { Hotel } from './../shared/hotel.model';
+import { HotelBooking } from './../shared/hotel-booking.model';
 import { User } from './../shared/user.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { HotelsService } from '../shared/hotels.service';
@@ -10,24 +11,25 @@ import { HotelsService } from '../shared/hotels.service';
 })
 export class HotelDataComponent implements OnInit {
   @Input() user!: User;
-  currentHotelId!: string;
   validBooking!: boolean;
+  currentBooking!: HotelBooking | undefined;
+  currentHotel!: Hotel | undefined;
 
   constructor(private hotelsService: HotelsService) {}
 
   ngOnInit(): void {
-    this.checkBookingValidity();
+    this.getUserBooking();
   }
 
-  checkBookingValidity() {
-    this.currentHotelId = this.hotelsService.getCurrentHotelId();
-
-    if (
-      this.user.activHotelsIds.find(
-        (hotelId) => hotelId === this.currentHotelId
-      )
-    ) {
+  getUserBooking() {
+    this.currentBooking = this.hotelsService.getHotelBookingForUser(
+      this.user.id
+    );
+    if (this.currentBooking) {
       this.validBooking = true;
+      this.currentHotel = this.hotelsService.getHotelData(
+        this.currentBooking.hotelId
+      );
     } else {
       this.validBooking = false;
     }

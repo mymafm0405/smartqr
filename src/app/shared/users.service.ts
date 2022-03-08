@@ -15,6 +15,7 @@ export class UsersService {
       'A123456',
       'Mahmoud',
       'Sliman',
+      'Egyptian',
       '24-12-1984',
       '../../assets/images/user.jpg',
       '+97466548110',

@@ -5,6 +5,7 @@ export class User {
     public passport: string,
     public firstName: string,
     public lastName: string,
+    public nationality: string,
     public dateOfBirth: string,
     public imageUrl: string,
     public phone: string,
