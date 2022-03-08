@@ -10,7 +10,7 @@
     >
       {{ covidStatus }}
     </h2>
-    <h2 [ngClass]="user.covidStatus === 'vaccinated' ? 'green' : 'red'">
+    <!-- <h2 [ngClass]="user.covidStatus === 'vaccinated' ? 'green' : 'red'">
       <span
         [ngClass]="
           user.covidStatus === 'vaccinated'
@@ -18,7 +18,7 @@
             : 'glyphicon glyphicon-remove'
         "
       ></span>
-    </h2>
+    </h2> -->
     <img
       class="img-responsive"
       *ngIf="user.covidStatus === 'vaccinated'"
