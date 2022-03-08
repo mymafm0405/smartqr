@@ -1,1 +1,16 @@
-<p>hotel-data works!</p>
+<div class="row">
+  <div class="col-xs-6 col-xs-push-3">
+    <img
+      *ngIf="validBooking"
+      src="../../assets/images/valid-booking.png"
+      alt="Valid Booking"
+      class="img-responsive"
+    />
+    <img
+      *ngIf="!validBooking"
+      src="../../assets/images/invalid-booking.png"
+      alt="Valid Booking"
+      class="img-responsive"
+    />
+  </div>
+</div>

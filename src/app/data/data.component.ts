@@ -1,3 +1,5 @@
+import { User } from './../shared/user.model';
+import { UsersService } from './../shared/users.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DataComponent implements OnInit {
   @Input() scanBy!: string;
-  constructor() {}
+  users!: User[];
+
+  constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
-    console.log(this.scanBy);
+    this.users = this.usersService.getUsers();
   }
 }

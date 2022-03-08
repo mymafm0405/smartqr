@@ -1,7 +1,13 @@
 <div class="row">
   <div class="col-md-12">
-    <app-government-data *ngIf="scanBy === 'government'"></app-government-data>
-    <app-hotel-data *ngIf="scanBy === 'hotels'"></app-hotel-data>
+    <app-government-data
+      *ngIf="scanBy === 'government'"
+      [user]="users[0]"
+    ></app-government-data>
+    <app-hotel-data
+      *ngIf="scanBy === 'hotels'"
+      [user]="users[0]"
+    ></app-hotel-data>
     <app-stadium-data *ngIf="scanBy === 'stadiums'"></app-stadium-data>
   </div>
 </div>

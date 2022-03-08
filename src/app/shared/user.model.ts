@@ -8,9 +8,15 @@ export class User {
     public dateOfBirth: string,
     public imageUrl: string,
     public phone: string,
-    public address: string,
+    public zone: number,
+    public street: number,
+    public building: number,
+    public entryDate: string,
+    public remainingDays: number,
     public covidStatus: string,
-    public hotelsIds: string[],
-    public stadiumsIds: string[]
+    public activHotelsIds: string[],
+    public expiredHotelsIds: string[],
+    public activeStadiumsIds: string[],
+    public expiredStadiumsIds: string[]
   ) {}
 }

@@ -18,10 +18,16 @@ export class UsersService {
       '24-12-1984',
       '../../assets/images/user.jpg',
       '+97466548110',
-      'Muizer area',
+      55,
+      817,
+      3,
+      '30-07-2022',
+      180,
       'vaccinated',
       ['1', '2'],
-      ['1', '2']
+      [],
+      ['1', '2'],
+      []
     ),
   ];
   constructor() {}
