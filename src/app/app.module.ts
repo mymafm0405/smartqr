@@ -10,6 +10,7 @@ import { ScanUserFormComponent } from './scan-user-form/scan-user-form.component
 import { GovernmentDataComponent } from './government-data/government-data.component';
 import { HotelDataComponent } from './hotel-data/hotel-data.component';
 import { StadiumDataComponent } from './stadium-data/stadium-data.component';
+import { SpinnerOneComponent } from './shared/spinner-one/spinner-one.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { StadiumDataComponent } from './stadium-data/stadium-data.component';
     ScanUserFormComponent,
     GovernmentDataComponent,
     HotelDataComponent,
-    StadiumDataComponent
+    StadiumDataComponent,
+    SpinnerOneComponent
   ],
   imports: [
     BrowserModule

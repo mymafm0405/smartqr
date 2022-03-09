@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'smart-qr';
   scanUser!: string;
+  loading = true;
 
   constructor(private usersService: UsersService) {}
 
@@ -17,5 +18,12 @@ export class AppComponent implements OnInit {
       this.scanUser = data;
       console.log(this.scanUser);
     });
+    this.setLoadingTime();
+  }
+
+  setLoadingTime() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
   }
 }
