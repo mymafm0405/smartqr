@@ -8,6 +8,9 @@
       *ngIf="scanBy === 'hotels'"
       [user]="users[0]"
     ></app-hotel-data>
-    <app-stadium-data *ngIf="scanBy === 'stadiums'"></app-stadium-data>
+    <app-stadium-data
+      *ngIf="scanBy === 'stadiums'"
+      [user]="users[0]"
+    ></app-stadium-data>
   </div>
 </div>

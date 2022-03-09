@@ -1,0 +1,13 @@
+.stadium-title {
+  color: tomato;
+  font-size: 40px;
+}
+.welcome {
+  font-style: italic;
+  color: #666;
+  font-weight: bold;
+}
+.info {
+  color: steelblue;
+  font-weight: bold;
+}
