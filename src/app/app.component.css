@@ -2,11 +2,13 @@
   font-size: 80px;
 }
 .home {
-  border: 1px dashed red;
+  border: 1px dashed #ffadad;
+  border-top: none;
   box-shadow: 5px 10px 10px #888888;
   padding-bottom: 50px;
   background-image: linear-gradient(#ffe3e3, #ffffff);
 }
-/* .loading {
-  margin-top: 100px;
-} */
+.banner {
+  box-shadow: 5px 10px 10px #888888;
+  padding: 0;
+}

@@ -1,17 +1,16 @@
-<div class="row">
-  <div class="col-md-4 col-xs-4"></div>
+<div class="row" style="border-bottom: 1px dashed #ffadad; padding-top: 50px">
   <div class="col-md-4 col-xs-4">
     <img [src]="user.imageUrl" class="img-thumbnail" alt="User Photo" />
   </div>
   <div class="col-md-3 col-xs-3">
-    <h2
+    <h4
       style="margin-top: 0; margin-bottom: 5px"
       [ngClass]="
         user.covidStatus === 'vaccinated' ? 'covid green' : 'covid red'
       "
     >
       {{ covidStatus }}
-    </h2>
+    </h4>
     <img
       class="img-responsive"
       *ngIf="user.covidStatus === 'vaccinated'"
@@ -25,13 +24,8 @@
       alt="vaccinated"
     />
   </div>
-</div>
-<div
-  class="row"
-  style="border-bottom: 1px dashed #4681ee; padding-bottom: 20px"
->
-  <div class="col-md-12">
-    <h2 class="name">{{ user.firstName }} {{ user.lastName }}</h2>
-    <h3 class="id-number">{{ user.idNumber }}</h3>
+  <div class="col-md-5 col-xs-5">
+    <h3 class="name">{{ user.firstName }} {{ user.lastName }}</h3>
+    <h4 class="id-number">{{ user.idNumber }}</h4>
   </div>
 </div>

@@ -1,20 +1,31 @@
 <div class="container" *ngIf="!loading">
   <div class="row text-center">
-    <div class="home col-md-6 col-md-push-3">
-      <h1 class="title">SmartQR</h1>
-      <img
-        *ngIf="!scanUser"
-        src="../assets/images/main-qr.png"
-        class="img-thumbnail img-responsive"
-        alt="user QRcode"
-      />
-      <!-- the result after scanning the qrcode -->
-      <div *ngIf="scanUser">
-        <app-result></app-result>
-        <app-data [scanBy]="scanUser"></app-data>
+    <div class="row">
+      <div class="col-md-6 col-md-push-3 banner">
+        <img
+          src="../assets/images/qatar2022-3.jpg"
+          alt="Qatar 2022"
+          class="img-responsive"
+        />
       </div>
-      <!-- End -->
-      <app-scan-user-form></app-scan-user-form>
+    </div>
+    <div class="row">
+      <div class="home col-md-6 col-md-push-3">
+        <!-- <h1 class="title">SmartQR</h1> -->
+        <img
+          *ngIf="!scanUser"
+          src="../assets/images/main-qr.png"
+          class="img-thumbnail img-responsive"
+          alt="user QRcode"
+        />
+        <!-- the result after scanning the qrcode -->
+        <div *ngIf="scanUser">
+          <app-result></app-result>
+          <app-data [scanBy]="scanUser"></app-data>
+        </div>
+        <!-- End -->
+        <app-scan-user-form></app-scan-user-form>
+      </div>
     </div>
   </div>
 </div>
