@@ -8,8 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GovernmentDataComponent implements OnInit {
   @Input() user!: User;
+  loading = true;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.setLoadingTime();
+  }
+
+  setLoadingTime() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 1200);
+  }
 }

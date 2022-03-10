@@ -14,11 +14,13 @@ export class HotelDataComponent implements OnInit {
   validBooking!: boolean;
   currentBooking!: HotelBooking | undefined;
   currentHotel!: Hotel | undefined;
+  loading = true;
 
   constructor(private hotelsService: HotelsService) {}
 
   ngOnInit(): void {
     this.getUserBooking();
+    this.setLoadingTime();
   }
 
   getUserBooking() {
@@ -33,5 +35,11 @@ export class HotelDataComponent implements OnInit {
     } else {
       this.validBooking = false;
     }
+  }
+
+  setLoadingTime() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 1200);
   }
 }

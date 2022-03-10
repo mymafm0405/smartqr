@@ -1,56 +1,65 @@
-<div class="row">
-  <div class="col-md-4 col-md-push-4 col-xs-4 col-xs-push-4">
-    <img
-      src="../../assets/images/hotel-2.png"
-      class="img-responsive"
-      alt="Hotel"
-    />
+<div class="row text-center" *ngIf="loading">
+  <div class="col-xs-6 col-xs-push-3">
+    <app-spinner-one></app-spinner-one>
   </div>
 </div>
-<div class="row" *ngIf="validBooking">
-  <div class="col-xs-12">
-    <h4 class="welcome">
-      We wish you a happy stay in our hotel, You're welcome to
-    </h4>
-    <h2 class="hotel-name">{{ currentHotel?.name }}</h2>
+<div *ngIf="!loading">
+  <div class="row">
+    <div class="col-md-4 col-md-push-4 col-xs-4 col-xs-push-4">
+      <img
+        src="../../assets/images/hotel-2.png"
+        class="img-responsive"
+        alt="Hotel"
+      />
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-4 col-xs-push-4">
-    <img
-      *ngIf="validBooking"
-      src="../../assets/images/valid-booking.png"
-      alt="Valid Booking"
-      class="img-responsive"
-    />
-    <img
-      *ngIf="!validBooking"
-      src="../../assets/images/invalid-booking.png"
-      alt="Valid Booking"
-      class="img-responsive"
-    />
+  <div class="row" *ngIf="validBooking">
+    <div class="col-xs-12">
+      <h4 class="welcome">
+        We wish you a happy stay in our hotel, You're welcome to
+      </h4>
+      <h2 class="hotel-name">{{ currentHotel?.name }}</h2>
+    </div>
   </div>
-</div>
-<div class="row" *ngIf="validBooking">
-  <div class="col-md-4 col-xs-6">
-    <h4>
-      Start: <span class="info">{{ currentBooking?.start }}</span>
-    </h4>
+  <div class="row">
+    <div class="col-xs-4 col-xs-push-4">
+      <img
+        *ngIf="validBooking"
+        src="../../assets/images/valid-booking.png"
+        alt="Valid Booking"
+        class="img-responsive"
+      />
+      <img
+        *ngIf="!validBooking"
+        src="../../assets/images/invalid-booking.png"
+        alt="Valid Booking"
+        class="img-responsive"
+      />
+    </div>
   </div>
-  <div class="col-md-4 col-xs-6">
-    <h4>
-      End: <span class="info">{{ currentBooking?.end }}</span>
-    </h4>
-  </div>
-  <div class="col-md-4 col-xs-6">
-    <h4>
-      Nights: <span class="info">{{ currentBooking?.nights }} Nights</span>
-    </h4>
-  </div>
-  <div class="col-md-4 col-xs-6">
-    <h4>
-      Paid status:
-      <span class="info">{{ currentBooking?.paid ? "Paid" : "Not-paid" }}</span>
-    </h4>
+  <div class="row" *ngIf="validBooking">
+    <div class="col-md-4 col-xs-6">
+      <h4>
+        Start: <span class="info">{{ currentBooking?.start }}</span>
+      </h4>
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <h4>
+        End: <span class="info">{{ currentBooking?.end }}</span>
+      </h4>
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <h4>
+        Nights: <span class="info">{{ currentBooking?.nights }} Nights</span>
+      </h4>
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <h4>
+        Paid status:
+        <span class="info">{{
+          currentBooking?.paid ? "Paid" : "Not-paid"
+        }}</span>
+      </h4>
+    </div>
   </div>
 </div>

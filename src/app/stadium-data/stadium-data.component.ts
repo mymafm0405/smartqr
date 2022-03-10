@@ -14,11 +14,13 @@ export class StadiumDataComponent implements OnInit {
   currentStadiumBooking: StadiumBooking | undefined;
   currentStadium!: Stadium | undefined;
   validBooking!: boolean;
+  loading = true;
 
   constructor(private stadiumsService: StadiumsService) {}
 
   ngOnInit(): void {
     this.checkValidity();
+    this.setLoadingTime();
   }
 
   checkValidity() {
@@ -31,5 +33,11 @@ export class StadiumDataComponent implements OnInit {
         this.currentStadiumBooking.stadiumId
       );
     }
+  }
+
+  setLoadingTime() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 1200);
   }
 }
