@@ -1,3 +1,4 @@
+import { UsersService } from './../shared/users.service';
 import { User } from './../shared/user.model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -10,7 +11,7 @@ export class GovernmentDataComponent implements OnInit {
   @Input() user!: User;
   loading = true;
 
-  constructor() {}
+  constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
     this.setLoadingTime();
@@ -20,5 +21,9 @@ export class GovernmentDataComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
     }, 1200);
+  }
+
+  onBack() {
+    this.usersService.changeScan('');
   }
 }

@@ -7,6 +7,7 @@ import { User } from './user.model';
 })
 export class UsersService {
   scanUserChanged = new Subject<string>();
+  selectedUserChanged = new Subject<string>();
 
   users: User[] = [
     new User(

@@ -14,6 +14,9 @@ export class ScanUserFormComponent implements OnInit {
   onChange(event: any) {
     console.log(event.target.value);
     const scanUser = event.target.value;
-    this.usersService.changeScan(scanUser);
+    this.usersService.selectedUserChanged.next(scanUser);
+    if (scanUser === '') {
+      this.usersService.changeScan(scanUser);
+    }
   }
 }

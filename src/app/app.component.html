@@ -24,7 +24,9 @@
           <app-data [scanBy]="scanUser"></app-data>
         </div>
         <!-- End -->
-        <app-scan-user-form></app-scan-user-form>
+        <app-scan-user-form
+          *ngIf="scanUser === '' || !scanUser"
+        ></app-scan-user-form>
       </div>
     </div>
   </div>

@@ -1,3 +1,4 @@
+import { UsersService } from './../shared/users.service';
 import { Stadium } from './../shared/stadium.model';
 import { StadiumBooking } from './../shared/stadium-booking';
 import { StadiumsService } from './../shared/stadiums.service';
@@ -16,7 +17,10 @@ export class StadiumDataComponent implements OnInit {
   validBooking!: boolean;
   loading = true;
 
-  constructor(private stadiumsService: StadiumsService) {}
+  constructor(
+    private stadiumsService: StadiumsService,
+    private usersService: UsersService
+  ) {}
 
   ngOnInit(): void {
     this.checkValidity();
@@ -39,5 +43,9 @@ export class StadiumDataComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
     }, 1200);
+  }
+
+  onBack() {
+    this.usersService.changeScan('');
   }
 }

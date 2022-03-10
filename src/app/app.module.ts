@@ -11,6 +11,8 @@ import { GovernmentDataComponent } from './government-data/government-data.compo
 import { HotelDataComponent } from './hotel-data/hotel-data.component';
 import { StadiumDataComponent } from './stadium-data/stadium-data.component';
 import { SpinnerOneComponent } from './shared/spinner-one/spinner-one.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { ScannerComponent } from './shared/scanner/scanner.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,11 @@ import { SpinnerOneComponent } from './shared/spinner-one/spinner-one.component'
     GovernmentDataComponent,
     HotelDataComponent,
     StadiumDataComponent,
-    SpinnerOneComponent
+    SpinnerOneComponent,
+    ScannerComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, ZXingScannerModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
