@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
     <h4>Please select the user type:</h4>
     <select
@@ -13,8 +13,47 @@
       <option value="stadiums">Stadiums</option>
     </select>
   </div>
+</div> -->
+<div class="row text-center">
+  <div class="col-xs-12" class="title">
+    <h3>Please choose one of the following:</h3>
+  </div>
+  <div class="col-xs-4 img-holder">
+    <img
+      src="../../assets/images/police.png"
+      class="img-responsive img-circle"
+      alt="Police"
+      (click)="onSelect('government')"
+    />
+  </div>
+  <div class="col-xs-4 img-holder">
+    <img
+      src="../../assets/images/hotel-2.png"
+      class="img-responsive img-circle"
+      alt="Hotel"
+      (click)="onSelect('hotels')"
+    />
+  </div>
+  <div class="col-xs-4 img-holder">
+    <img
+      src="../../assets/images/stad-2.png"
+      class="img-responsive img-circle"
+      alt="Stadium"
+      (click)="onSelect('stadiums')"
+    />
+  </div>
 </div>
-<div class="row">
+<div class="row scan-me" *ngIf="selectedTarget">
+  <div class="col-xs-3 col-xs-push-5">
+    <img
+      src="../../assets/images/scan-2.png"
+      class="img-responsive"
+      (click)="onScanClick()"
+      alt="Scan me"
+    />
+  </div>
+</div>
+<div class="row" *ngIf="startCamera">
   <div class="col-md-12">
     <app-scanner></app-scanner>
   </div>

@@ -2,3 +2,22 @@
   color: #2f85d4;
   font-size: 20px;
 }
+.title {
+  margin-bottom: 40px;
+  color: #146bbd;
+}
+.img-holder {
+  overflow: hidden;
+}
+img {
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+img:hover {
+  transform: scale(1.5);
+  opacity: 0.9;
+}
+.scan-me {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
