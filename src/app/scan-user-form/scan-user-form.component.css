@@ -14,10 +14,13 @@ img {
   transition: transform 0.5s ease;
 }
 img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   opacity: 0.9;
 }
 .scan-me {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+.btn {
+  margin-top: 30px;
 }

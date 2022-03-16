@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'smart-qr';
   scanUser!: string;
   loading = true;
+  lang = 'eng';
 
   constructor(private usersService: UsersService) {}
 
@@ -25,5 +26,10 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
     }, 2000);
+  }
+
+  onLangSelect(lang: string) {
+    this.usersService.langSelectChanged.next(lang);
+    this.lang = lang;
   }
 }

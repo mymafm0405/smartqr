@@ -16,46 +16,103 @@
 </div> -->
 <div class="row text-center">
   <div class="col-xs-12" class="title">
-    <h3>Please choose one of the following:</h3>
+    <h3 *ngIf="currentLang === 'eng' && !selectedTarget">
+      Please choose one of the following:
+    </h3>
+    <h2 *ngIf="currentLang === 'arabic' && !selectedTarget">
+      من فضلك قم بإختيار الجهة
+    </h2>
+    <button
+      *ngIf="selectedTarget && currentLang === 'eng'"
+      class="btn btn-danger"
+      (click)="onBackClick()"
+    >
+      Go back
+    </button>
+    <button
+      *ngIf="selectedTarget && currentLang === 'arabic'"
+      class="btn btn-danger"
+      (click)="onBackClick()"
+    >
+      عودة للخلف
+    </button>
   </div>
-  <div class="col-xs-4 img-holder">
-    <img
-      src="../../assets/images/police.png"
-      class="img-responsive img-circle"
-      alt="Police"
-      (click)="onSelect('government')"
-    />
+  <div *ngIf="loading">
+    <div class="row">
+      <div class="col-xs-6 col-xs-push-3">
+        <app-spinner-one></app-spinner-one>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-4 img-holder">
-    <img
-      src="../../assets/images/hotel-2.png"
-      class="img-responsive img-circle"
-      alt="Hotel"
-      (click)="onSelect('hotels')"
-    />
-  </div>
-  <div class="col-xs-4 img-holder">
-    <img
-      src="../../assets/images/stad-2.png"
-      class="img-responsive img-circle"
-      alt="Stadium"
-      (click)="onSelect('stadiums')"
-    />
+  <div *ngIf="!loading">
+    <div class="row" *ngIf="selectedTarget">
+      <div class="col-xs-6 col-xs-push-3">
+        <h4 *ngIf="currentLang === 'eng'">You're scanning now as</h4>
+        <h3 *ngIf="currentLang === 'arabic'">
+          تقوم بعمل الإسكان الآن بصفتك من إدارة
+        </h3>
+      </div>
+    </div>
+    <div
+      *ngIf="!selectedTarget || selectedTarget === 'government'"
+      [ngClass]="
+        !selectedTarget
+          ? 'col-xs-4 img-holder'
+          : 'col-xs-4 col-md-push-4 img-holder'
+      "
+    >
+      <img
+        src="../../assets/images/police.png"
+        class="img-responsive img-circle"
+        alt="Police"
+        (click)="onSelect('government')"
+        *ngIf="selectedTarget === 'government' || !selectedTarget"
+      />
+    </div>
+    <div
+      *ngIf="!selectedTarget || selectedTarget === 'hotels'"
+      [ngClass]="
+        !selectedTarget
+          ? 'col-xs-4 img-holder'
+          : 'col-xs-4 col-md-push-4 img-holder'
+      "
+    >
+      <img
+        src="../../assets/images/hotel-2.png"
+        class="img-responsive img-circle"
+        alt="Hotel"
+        (click)="onSelect('hotels')"
+        *ngIf="selectedTarget === 'hotels' || !selectedTarget"
+      />
+    </div>
+    <div
+      *ngIf="!selectedTarget || selectedTarget === 'stadiums'"
+      [ngClass]="
+        !selectedTarget
+          ? 'col-xs-4 img-holder'
+          : 'col-xs-4 col-md-push-4 img-holder'
+      "
+    >
+      <img
+        src="../../assets/images/stad-2.png"
+        class="img-responsive img-circle"
+        alt="Stadium"
+        (click)="onSelect('stadiums')"
+        *ngIf="selectedTarget === 'stadiums' || !selectedTarget"
+      />
+    </div>
   </div>
 </div>
-<div class="row scan-me" *ngIf="selectedTarget">
+
+<div class="row scan-me" *ngIf="selectedTarget && !loading">
   <div class="col-xs-3 col-xs-push-5">
     <img
       src="../../assets/images/scan-2.png"
       class="img-responsive"
       (click)="onScanClick()"
       alt="Scan me"
+      width="100"
     />
-  </div>
-</div>
-<div class="row" *ngIf="selectedTarget">
-  <div class="col-md-12">
-    <h4>You're scanning now as ({{ selectedTarget }}) --> Click on camera</h4>
   </div>
 </div>
 <div class="row" *ngIf="startCamera">

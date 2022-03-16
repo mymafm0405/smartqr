@@ -1,17 +1,27 @@
 import { UsersService } from './../shared/users.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-scan-user-form',
   templateUrl: './scan-user-form.component.html',
   styleUrls: ['./scan-user-form.component.css'],
 })
-export class ScanUserFormComponent implements OnInit {
+export class ScanUserFormComponent implements OnInit, OnDestroy {
   constructor(private usersService: UsersService) {}
-  selectedTarget!: string;
+  selectedTarget!: string | undefined;
   startCamera!: boolean;
+  currentLang = 'eng';
+  langSub!: Subscription;
+  loading = false;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.langSub = this.usersService.langSelectChanged.subscribe(
+      (lang: string) => {
+        this.currentLang = lang;
+      }
+    );
+  }
 
   // onChange(event: any) {
   //   console.log(event.target.value);
@@ -25,9 +35,22 @@ export class ScanUserFormComponent implements OnInit {
     this.startCamera = false;
     this.selectedTarget = option;
     this.usersService.selectedUserChanged.next(this.selectedTarget);
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+    }, 1500);
   }
 
   onScanClick() {
     this.startCamera = true;
+  }
+
+  onBackClick() {
+    this.selectedTarget = undefined;
+    this.startCamera = false;
+  }
+
+  ngOnDestroy(): void {
+    this.langSub.unsubscribe();
   }
 }
