@@ -39,14 +39,14 @@
   </div>
   <div *ngIf="loading">
     <div class="row">
-      <div class="col-xs-6 col-xs-push-3">
+      <div class="col-xs-4 col-xs-push-4">
         <app-spinner-one></app-spinner-one>
       </div>
     </div>
   </div>
   <div *ngIf="!loading">
     <div class="row" *ngIf="selectedTarget">
-      <div class="col-xs-6 col-xs-push-3">
+      <div class="col-xs-8 col-xs-push-2">
         <h4 *ngIf="currentLang === 'eng'">You're scanning now as</h4>
         <h3 *ngIf="currentLang === 'arabic'">
           تقوم بعمل الإسكان الآن بصفتك من إدارة
@@ -58,7 +58,7 @@
       [ngClass]="
         !selectedTarget
           ? 'col-xs-4 img-holder'
-          : 'col-xs-4 col-md-push-4 img-holder'
+          : 'col-xs-4 col-xs-push-4 img-holder'
       "
     >
       <img
@@ -74,7 +74,7 @@
       [ngClass]="
         !selectedTarget
           ? 'col-xs-4 img-holder'
-          : 'col-xs-4 col-md-push-4 img-holder'
+          : 'col-xs-4 col-xs-push-4 img-holder'
       "
     >
       <img
@@ -90,7 +90,7 @@
       [ngClass]="
         !selectedTarget
           ? 'col-xs-4 img-holder'
-          : 'col-xs-4 col-md-push-4 img-holder'
+          : 'col-xs-4 col-xs-push-4 img-holder'
       "
     >
       <img
