@@ -15,6 +15,8 @@ export class ScannerComponent implements OnInit {
     this.usersService.selectedUserChanged.subscribe((data: string) => {
       this.scanUser = data;
     });
+
+    this.scanUser = this.usersService.getCurrentScanUser();
   }
 
   goToSomeUrl() {

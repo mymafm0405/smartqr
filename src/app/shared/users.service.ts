@@ -9,6 +9,7 @@ export class UsersService {
   scanUserChanged = new Subject<string>();
   selectedUserChanged = new Subject<string>();
   langSelectChanged = new Subject<string>();
+  currentScanUser!: string;
 
   users: User[] = [
     new User(
@@ -37,6 +38,14 @@ export class UsersService {
 
   getUsers() {
     return this.users;
+  }
+
+  setCurrentScanUser(data: string) {
+    this.currentScanUser = data;
+  }
+
+  getCurrentScanUser(): string {
+    return this.currentScanUser;
   }
 
   changeScan(scanUser: string) {

@@ -35,6 +35,7 @@ export class ScanUserFormComponent implements OnInit, OnDestroy {
     this.startCamera = false;
     this.selectedTarget = option;
     this.usersService.selectedUserChanged.next(this.selectedTarget);
+    this.usersService.setCurrentScanUser(this.selectedTarget);
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
