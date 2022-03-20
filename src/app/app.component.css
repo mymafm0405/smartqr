@@ -29,3 +29,6 @@
 .test {
   background-color: #888888;
 }
+.full {
+  height: 100vh;
+}
