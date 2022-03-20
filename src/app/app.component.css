@@ -9,7 +9,10 @@
   background-image: linear-gradient(#ffe3e3, #ffffff);
 }
 .lang {
-  background-color: #ffe3e3;
+  background-image: linear-gradient(#ffe3e3, #ffffff);
+}
+.logo {
+  background-image: linear-gradient(#ffffff, #ffe3e3);
 }
 .form {
   background-image: linear-gradient(#ffe3e3, #ffffff);
