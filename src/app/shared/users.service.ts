@@ -9,6 +9,7 @@ export class UsersService {
   scanUserChanged = new Subject<string>();
   selectedUserChanged = new Subject<string>();
   langSelectChanged = new Subject<string>();
+  logoShowChanged = new Subject<boolean>();
   currentScanUser!: string;
 
   users: User[] = [

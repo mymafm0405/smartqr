@@ -32,13 +32,13 @@
       <!-- End -->
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6 col-md-push-3 col-xs-4 col-xs-push-4 logo">
+  <div class="row" *ngIf="!hideLogo">
+    <div class="col-md-6 col-md-push-3 logo">
       <img
         src="../assets/images/tayassar.png"
         class="img-responsive"
         alt="Logo"
-        style="margin: 0 auto"
+        style="margin: 0 auto; width: 30%"
       />
     </div>
   </div>

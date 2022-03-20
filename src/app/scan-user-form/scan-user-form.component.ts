@@ -35,6 +35,7 @@ export class ScanUserFormComponent implements OnInit, OnDestroy {
     this.startCamera = false;
     this.selectedTarget = option;
     this.usersService.selectedUserChanged.next(this.selectedTarget);
+    this.usersService.logoShowChanged.next(true);
     this.usersService.setCurrentScanUser(this.selectedTarget);
     this.loading = true;
     setTimeout(() => {
@@ -49,6 +50,7 @@ export class ScanUserFormComponent implements OnInit, OnDestroy {
   onBackClick() {
     this.selectedTarget = undefined;
     this.startCamera = false;
+    this.usersService.logoShowChanged.next(false);
   }
 
   ngOnDestroy(): void {

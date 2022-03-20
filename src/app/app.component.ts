@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   scanUser!: string;
   loading = true;
   lang = 'eng';
+  hideLogo = false;
 
   constructor(private usersService: UsersService) {}
 
@@ -18,6 +19,10 @@ export class AppComponent implements OnInit {
     this.usersService.scanUserChanged.subscribe((data: string) => {
       this.scanUser = data;
       console.log(this.scanUser);
+    });
+    this.usersService.logoShowChanged.subscribe((status: boolean) => {
+      this.hideLogo = status;
+      console.log(this.hideLogo);
     });
     this.setLoadingTime();
   }
