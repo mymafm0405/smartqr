@@ -47,5 +47,6 @@ export class StadiumDataComponent implements OnInit {
 
   onBack() {
     this.usersService.changeScan('');
+    this.usersService.logoShowChanged.next(false);
   }
 }
