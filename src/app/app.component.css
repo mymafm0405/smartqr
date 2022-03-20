@@ -7,7 +7,12 @@
   box-shadow: 5px 10px 10px #888888;
   padding-bottom: 50px;
   background-image: linear-gradient(#ffe3e3, #ffffff);
-  height: 100vh;
+}
+.lang {
+  background-color: #ffe3e3;
+}
+.form {
+  background-image: linear-gradient(#ffe3e3, #ffffff);
 }
 .banner {
   padding: 0;
@@ -17,4 +22,7 @@
 }
 .row {
   margin: 0;
+}
+.test {
+  background-color: #888888;
 }
