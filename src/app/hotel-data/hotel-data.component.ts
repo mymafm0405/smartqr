@@ -11,7 +11,7 @@ import { HotelsService } from '../shared/hotels.service';
   styleUrls: ['./hotel-data.component.css'],
 })
 export class HotelDataComponent implements OnInit {
-  @Input() user!: User;
+  @Input() user!: User | undefined;
   validBooking!: boolean;
   currentBooking!: HotelBooking | undefined;
   currentHotel!: Hotel | undefined;
@@ -28,16 +28,18 @@ export class HotelDataComponent implements OnInit {
   }
 
   getUserBooking() {
-    this.currentBooking = this.hotelsService.getHotelBookingForUser(
-      this.user.id
-    );
-    if (this.currentBooking) {
-      this.validBooking = true;
-      this.currentHotel = this.hotelsService.getHotelData(
-        this.currentBooking.hotelId
+    if (this.user) {
+      this.currentBooking = this.hotelsService.getHotelBookingForUser(
+        this.user.id
       );
-    } else {
-      this.validBooking = false;
+      if (this.currentBooking) {
+        this.validBooking = true;
+        this.currentHotel = this.hotelsService.getHotelData(
+          this.currentBooking.hotelId
+        );
+      } else {
+        this.validBooking = false;
+      }
     }
   }
 

@@ -7,6 +7,7 @@ export class StadiumsService {
   stadiums: Stadium[] = [
     new Stadium('1', 'Khaleefa Stadium', 'Al-Azyizia'),
     new Stadium('2', 'Al Khor Stadium', 'Al-Khor'),
+    new Stadium('3', 'Al Beet Stadium', 'Al-SAAD'),
   ];
 
   stadiumsBookings: StadiumBooking[] = [
@@ -23,7 +24,17 @@ export class StadiumsService {
     new StadiumBooking(
       '2',
       '2',
-      '1',
+      '2',
+      '15-12-2022',
+      '10:25 PM',
+      'A123456',
+      'H420',
+      true
+    ),
+    new StadiumBooking(
+      '2',
+      '3',
+      '3',
       '15-12-2022',
       '10:25 PM',
       'A123456',

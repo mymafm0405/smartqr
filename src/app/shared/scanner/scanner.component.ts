@@ -19,7 +19,10 @@ export class ScannerComponent implements OnInit {
     this.scanUser = this.usersService.getCurrentScanUser();
   }
 
-  goToSomeUrl() {
+  goToSomeUrl(event: any) {
     this.usersService.changeScan(this.scanUser);
+    this.usersService.setUser.next(event);
+    this.usersService.setCurrentUserId(event);
+    console.log(event);
   }
 }

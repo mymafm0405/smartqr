@@ -2,15 +2,15 @@
   <div class="col-md-12">
     <app-government-data
       *ngIf="scanBy === 'government'"
-      [user]="users[0]"
+      [user]="currentUser"
     ></app-government-data>
     <app-hotel-data
       *ngIf="scanBy === 'hotels'"
-      [user]="users[0]"
+      [user]="currentUser"
     ></app-hotel-data>
     <app-stadium-data
       *ngIf="scanBy === 'stadiums'"
-      [user]="users[0]"
+      [user]="currentUser"
     ></app-stadium-data>
   </div>
 </div>

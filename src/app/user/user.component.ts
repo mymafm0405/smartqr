@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  @Input() user!: User;
+  @Input() user!: User | undefined;
   covidStatus!: string;
 
   constructor() {}
@@ -17,12 +17,14 @@ export class UserComponent implements OnInit {
   }
 
   checkCovidStatus() {
-    if (this.user.covidStatus === 'vaccinated') {
-      this.covidStatus = 'Vaccinated';
-    } else if (this.user.covidStatus === 'unvaccinated') {
-      this.covidStatus = 'Unvaccinated';
-    } else {
-      this.covidStatus = 'Unknown';
+    if (this.user) {
+      if (this.user.covidStatus === 'vaccinated') {
+        this.covidStatus = 'Vaccinated';
+      } else if (this.user.covidStatus === 'unvaccinated') {
+        this.covidStatus = 'Unvaccinated';
+      } else {
+        this.covidStatus = 'Unknown';
+      }
     }
   }
 }

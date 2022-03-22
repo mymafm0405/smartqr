@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./government-data.component.css'],
 })
 export class GovernmentDataComponent implements OnInit {
-  @Input() user!: User;
+  @Input() user!: User | undefined;
   loading = true;
 
   constructor(private usersService: UsersService) {}

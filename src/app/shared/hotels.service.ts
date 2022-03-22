@@ -13,6 +13,7 @@ export class HotelsService {
   hotelBookings: HotelBooking[] = [
     new HotelBooking('1', '2', '1', '25-03-2022', '29-03-2022', 4, true, true),
     new HotelBooking('2', '1', '2', '10-04-2022', '21-04-2022', 10, true, true),
+    new HotelBooking('2', '3', '3', '10-04-2022', '21-04-2022', 10, true, true),
   ];
 
   getHotels() {

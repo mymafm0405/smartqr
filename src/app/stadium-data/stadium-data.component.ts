@@ -11,7 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./stadium-data.component.css'],
 })
 export class StadiumDataComponent implements OnInit {
-  @Input() user!: User;
+  @Input() user!: User | undefined;
   currentStadiumBooking: StadiumBooking | undefined;
   currentStadium!: Stadium | undefined;
   validBooking!: boolean;
@@ -28,14 +28,16 @@ export class StadiumDataComponent implements OnInit {
   }
 
   checkValidity() {
-    this.currentStadiumBooking = this.stadiumsService.getBookingForUser(
-      this.user.id
-    );
-    if (this.currentStadiumBooking) {
-      this.validBooking = true;
-      this.currentStadium = this.stadiumsService.getStadiumData(
-        this.currentStadiumBooking.stadiumId
+    if (this.user) {
+      this.currentStadiumBooking = this.stadiumsService.getBookingForUser(
+        this.user.id
       );
+      if (this.currentStadiumBooking) {
+        this.validBooking = true;
+        this.currentStadium = this.stadiumsService.getStadiumData(
+          this.currentStadiumBooking.stadiumId
+        );
+      }
     }
   }
 
